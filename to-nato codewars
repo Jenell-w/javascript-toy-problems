@@ -1,9 +1,8 @@
 function to_nato(words) {
-	let newPhrase = words.toUpperCase().replace(/[ 0-9]/g, "").split("");
   let natoDict = { "A": "Alfa", "B": "Bravo",	"C":"Charlie",	"D":"Delta",	"E":"Echo",	
   "F":"Foxtrot",	"G":"Golf",	"H":"Hotel",	"I":"India",	"J": "Juliett",	
-  "K": "Kilo",	"L":"Lima",	"M": "Mike",	"N":"November",	"O":"Oskar",	"P": "Papa",
+  "K": "Kilo",	"L":"Lima",	"M": "Mike",	"N":"November",	"O":"Oscar",	"P": "Papa",
   "Q": "Quebec", "R":"Romeo",	"S": "Sierra",	"T":"Tango",	"U":"Uniform",	"V": "Victor",	
-  "W":"Whiskey",	"X": "Xray",	"Y":"Yankee",	"Z":"Zulu" };
-  //let finalPhrase = newPhrase.map(item => if(item === Object.values(natoDict)) {console.log(item)}   );
+  "W":"Whiskey",	"X": "Xray",	"Y":"Yankee",	"Z":"Zulu" };  
+  return words.toUpperCase().replace(/[\n\r\s\t]+/g, "").split("").map(item => { if (!natoDict.hasOwnProperty(item)) {return item} else {return natoDict[item] }}).join(" ");
 }
