@@ -1,0 +1,13 @@
+//use filter to take out floats and negative ints from an array
+//use map to square the results
+const squareList = (arr) => {
+  let posIntList = arr.filter(num => (num >= 0 && num % 1=== 0));
+  console.log(posIntList)
+ 
+  let result = posIntList.map(value => { return value * value}) 
+  return result;
+ 
+};
+
+const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
+//output is [25,9]
