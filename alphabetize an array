@@ -1,0 +1,6 @@
+//alphabetical order for an array of strings using the sort method
+
+function alphabeticalOrder(arr) {
+  return arr.sort((a,b) => {return a === b ? 0 : a>b ? 1 : -1 });
+}
+
