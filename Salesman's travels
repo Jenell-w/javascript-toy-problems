@@ -1,0 +1,23 @@
+//clear solution to Salesman's Travel - Codewars 6 kyu
+function travel(r, zipcode) {
+  let finalList = [] 
+  let addList = r.split(",").
+    map(x => {
+       const addr = x.match(/(^\d+) ([a-zA-z.\s]+) ([A-Z]{2} \d+)$/);
+      return {
+         houseNumber: addr[1],
+         streetAndCity: addr[2],
+         zip: addr[3]
+            }
+       });
+      let streets = [];
+      let houses = [];
+      addList.forEach(r => {
+        if (r.zip === zipcode) {
+          streets.push(r.streetAndCity);
+          houses.push(r.houseNumber)
+        }
+      })
+  
+   return`${zipcode}:${streets.join(',')}/${houses.join(',')}`;
+}
