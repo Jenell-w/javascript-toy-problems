@@ -1,0 +1,10 @@
+//convert title to be used in a url. first make copy so as not to change original.
+//then trim leading and trailing whitespaces
+//the change to all lowercase, then split on the space
+//filter just the words (ignore extra spaces) and then join on the hypen to create urlSlug.
+
+function urlSlug(title) {
+  let newTitle = title.slice().trim().toLowerCase().split(" ").filter(word => word).join("-")
+  return newTitle;
+
+}
