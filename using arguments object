@@ -1,0 +1,12 @@
+//to have a variable number of arguments, you must use arguments object or rest operator(ES6). 
+//in this case, remove all elements from the initial array that are of the same value as these arguments(could be diff amts of variables to eliminate).
+
+function destroyer(arr, ...args) {
+  let nextArgs = [];
+  for (var i=0; i < args.length; i++) {
+    nextArgs.push(args[i])
+    }
+  let final = arr.filter(el => {return nextArgs.indexOf(el) == -1 })
+
+  return final;
+}
