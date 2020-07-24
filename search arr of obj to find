@@ -1,0 +1,16 @@
+//search through array of objects to find matching name/value pair (second argument)
+
+function whatIsInAName(collection, source) {
+  let src = Object.keys(source); //create item to search for when looking at object's properties
+  return collection.filter(obj => {. 
+    for (let i= 0; i < src.length; i++) {
+      if (!obj.hasOwnProperty(src[i]) || obj[src[i]] !== source[src[i]]) {
+        return false
+      }
+    }
+    return true
+  }
+  
+  )
+
+}
