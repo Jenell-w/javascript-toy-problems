@@ -1,0 +1,7 @@
+//convert to spinal case
+
+function spinalCase(str) {
+  let newStr = str.slice().replace(/(\B[A-Z])/g, ' $1');
+  let newestStr = newStr.replace(/( |_)+/g, "-")
+  return newestStr.toLowerCase();
+}
