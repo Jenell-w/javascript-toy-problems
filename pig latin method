@@ -1,0 +1,20 @@
+//There must be a way to do this without making a variable referencing the vowels 2 times??
+
+//For now this is the solution:
+function translatePigLatin(str) {
+  let vowels = ["a", "e", "i","o","u"];
+  let firstConsonants = /(?=[aeiou])/
+  for (const letter of vowels) {
+    if (str[0] == letter) {
+      return str+"way";
+    }
+  }
+    let newStr = str.split(firstConsonants);
+  return (newStr.slice(1).join("")+newStr[0]+"ay")
+
+}
+
+translatePigLatin("glove") 
+//returns oveglay
+translatePigLatin("eight")
+//returns eightway
