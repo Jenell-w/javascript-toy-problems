@@ -1,0 +1,11 @@
+
+//must replace before item with after item and retain capitalization
+
+function myReplace(str, before, after) {
+  let i = str.indexOf(before);
+  if (str[i] === str[i].toUpperCase()) {
+    after = after.charAt(0).toUpperCase() + after.slice(1);
+    }   
+    let final = str.replace(before, after)
+    return final;   
+}
