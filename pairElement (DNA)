@@ -1,14 +1,11 @@
 function pairElement(str) {
-  let dNABasePairs = new Map([
-    [["G","C"]],
-    [["C","G"]],
-    [["A","T"]],
-    [["T","A"]]
-  ]);
-  for (let [key] of dNABasePairs){
-  console.log(key)
-  }
-
-//console.log(...dNABasePairs.keys())
+  let arr = str.split('')
+  let dNABasePairs = {G:"C",
+    C:"G",
+    A:"T",
+    T:"A"
+  };
+  let final = arr.map(el => [el, dNABasePairs[el]] );
+  return final;
 
 }
