@@ -1,0 +1,17 @@
+//pretty sure there could be a shorter way to see which num is missing given that the array is already in numerical order.
+
+//find letter missing in "abce" for example
+
+function fearNotLetter(str) {
+  let newStr = str.split("");
+  var arr = [];
+  for (let i=0; i< newStr.length; i++) {
+    arr.push(newStr[i].charCodeAt())
+  }
+  var [min,max] = [Math.min(...arr), Math.max(...arr)];
+  var out = Array.from(Array(max-min),(v,i)=>i+min).filter(i=>!arr.includes(i));
+  if (out < 97 || out > 122) {
+    return undefined;
+  }
+  return String.fromCharCode(out);
+}
