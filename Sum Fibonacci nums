@@ -1,0 +1,11 @@
+//Find sum of ODD Fibonacci numbers
+
+function sumFibs(num) {
+    if (num <=0) return 0;
+    let nextFib = 0;
+    const arrFib = [1,1];
+  while ((nextFib = arrFib[0] + arrFib[1]) <= num){
+    arrFib.unshift(nextFib); 
+    }
+   return arrFib.filter(x => x % 2 != 0).reduce((x,y)=> x+y);
+}
