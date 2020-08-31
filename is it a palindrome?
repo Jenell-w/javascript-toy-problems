@@ -1,0 +1,9 @@
+function palindrome(str) {
+  let regex = /[0-9A-Za-z]/gi
+  let newS = str.toLowerCase().match(regex);
+  if (newS.join() !== newS.reverse().join()) {
+    return false;
+  } else {
+  return true;
+    }
+}
