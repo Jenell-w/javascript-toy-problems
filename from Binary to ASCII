@@ -1,0 +1,6 @@
+//A short sweet way to convert binary to ASCII, for a fun code!
+
+function binaryAgent(str) {
+  let newS = str.split(' ').map(x => String.fromCharCode(parseInt(x, 2))).join('');
+  return newS;
+}
