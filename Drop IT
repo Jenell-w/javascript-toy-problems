@@ -1,0 +1,12 @@
+//Drop the items that are not true, and once a true item is reached, return the REST of the array.
+
+function dropElements(arr, func) {
+  let newArr = arr.filter(x => func(x));
+    if (newArr.length == 0) {
+      return newArr;
+    }
+  let i = arr.indexOf(newArr[0]);
+  let results = arr.slice(i, arr[-1]);
+  return results;
+  
+}
