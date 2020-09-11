@@ -1,0 +1,19 @@
+//Working on regex to validate many forms of telephone numbers;
+//work in progress
+
+function telephoneCheck(str) {
+let hasTenDigits = /[\d]{10}/;
+let hasElevenDigits = /[\d]{11}/;
+let startsWithOne = /^[1]/;
+let hasPermittedCharsOnly = /[\d-()]/;
+let hasCorrectParentheses = /\(\d{3}\)/;
+if (!hasTenDigits && !hasElevenDigits) {
+  return false; 
+} else if (!hasPermittedCharsOnly || !hasCorrectParentheses) {
+  return false;
+} else if (hasElevenDigits && !startsWithOne) {
+  return false;
+} else {
+  return true;
+}
+}
