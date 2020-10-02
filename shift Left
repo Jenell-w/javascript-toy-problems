@@ -1,0 +1,11 @@
+//rotate array elements d spots to the left
+//return rotated array
+
+function rotLeft(a, d) {
+    if (d > a.length) {
+        d = d % a.length
+    }
+    a = a.concat(a.splice(0, d));
+    return a;
+    
+}
