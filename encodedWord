@@ -1,0 +1,31 @@
+//Ignore case and encode the words as follows.  Any char appearing >1 will be ")", any char appearing 1x will be. "("
+//"din"      =>  "((("
+//"recede"   =>  "()()()"
+//"Success"  =>  ")())())"
+//"(( @"     =>  "))((" 
+
+
+
+function duplicateEncode(word){
+    let encodedWord = word.toLowerCase();
+    let charMap=new Map();
+    let count = 0;
+    let newStr= "";
+    for (const key of encodedWord) {
+      charMap.set(key, count)
+    };
+    for (const key of encodedWord) {
+      let count = charMap.get(key);
+      charMap.set(key, count+1);
+    };
+    for (let i=0; i < encodedWord.length; i++) {
+        if (charMap.get(encodedWord[i]) == 1) {
+          newStr += "(";
+        }
+      if (charMap.get(encodedWord[i]) > 1) {
+        newStr += ")";
+      }
+    
+      }
+  return newStr
+}
